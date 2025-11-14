@@ -127,9 +127,97 @@ class Ship: public vehicle
     }
 };
 
+class Car:public vehicle
+{
+    string model;
+    int engine;
+    public:
+    Car() { engine = 0; }
+    Car(string n, int sp, string col, int am, string m, int en)
+    {
+        name = n;
+        MaxSpeed = sp;
+        color = col;
+        amountOfPlace = am;
+        model = m;
+        engine = en;
+    }
+    
+    void SetModel(string m) { model = m; }
+    void SetEngine(int en) { engine = en; }
+
+    string GetModel() { return model; }
+    int GetEngine() { return engine; }
+
+    void Print()
+    {
+        vehicle::Print();
+        cout << "Model: " << model << "\tEngine: " << engine << " l" << endl;
+    }
+};
+
+class Bicycle:public vehicle
+{
+    int wheel;
+    string type;
+    public:
+    Bicycle() { wheel = 0; }
+    Bicycle(string n, int sp, string col, int am, int wh, string ty)
+    {
+        name = n;
+        MaxSpeed = sp;
+        color = col;
+        amountOfPlace = am;
+        wheel = wh;
+        type = ty;        
+    }
+
+    void SetWheel(int wh) { wheel = wh; }
+    void SetType(string ty) { type = ty; }
+
+    int GetWheel() { return wheel; }
+    string GetType() { return type; }
+
+    void Print()
+    {
+        vehicle::Print();
+        cout << "Wheels: " << wheel << "\tType: " << type << endl;
+    }
+};
+
+class Tank:public vehicle
+{
+    string country;
+    double weight;
+    public:
+    Tank() { weight = 0; }
+    Tank(string n, int sp, string col, int am, string coun, double w) {
+        name = n;
+        MaxSpeed = sp;
+        color = col;
+        amountOfPlace = am;
+        country = coun;
+        weight = w;        
+     }
+
+     void SetCountry(string coun) { country = coun; }
+     void SetWeight(double w) { weight = w; }
+
+     string GetCountry() { return country; }
+     double GetWeight() { return weight; }
+
+     void Print()
+     {
+        vehicle::Print();
+        cout << "Made in: " << country << "\tWeight: " << weight << " kg" << endl;
+     }
+};
+
 int main()
 {
     Truck obj("Mercedes", 185, "Black", 2, 1000, 200);
     obj.Print();
+
+    
 
 }
